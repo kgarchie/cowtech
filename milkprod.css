@@ -1,0 +1,81 @@
+ @charset "UTF-8";
+ 
+ @keyframes mymove {
+  from {top: 0px;}
+  to {top: 200px;}
+}
+ body {
+    font-family: 'Baumans';
+    background-color: #d4d8dd;
+}
+
+table {
+      border-collapse: collapse;
+      width: 100%;
+      table-layout: fixed;
+}
+
+td,
+th {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+  /* Hide some columns on smaller screens */
+  td:nth-child(3),
+  th:nth-child(3),
+  td:nth-child(4),
+  th:nth-child(4),
+  td:nth-child(5),
+  th:nth-child(5) {
+    display: none;
+  }
+
+  /* Wrap cells into new rows */
+  td,
+  th {
+    display: block;
+    text-align: right;
+    width: 100%;
+  }
+
+  td:before,
+  th:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination button {
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    background-color: #008CBA;
+    text-decoration: none;
+    margin: 4px;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background-color: #4CAF50;
+}
+
+.pagination button.disabled {
+    background-color: #ddd;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+}
